@@ -1,0 +1,637 @@
+/*Projeto de Programação Linear 1/2018
+Alunos: Gabriel Dutra Valerio
+	Gabriele Arbetavicius
+	Leonardo Fernandes Alonso
+	Victoria Andressa Santos Macedo de Faria
+*/
+
+
+
+import javax.swing.JPanel;
+
+public class TelaSimplex extends javax.swing.JFrame {
+
+    public TelaSimplex() {
+
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        pnl3X2F = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbl3x2f = new javax.swing.JTable();
+        btnCalcular1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        pnl2X3F = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tbl2x3f = new javax.swing.JTable();
+        btnCalcular2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        pnlResultado = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtResultado = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
+        pnlInicio = new javax.swing.JPanel();
+        btnInicio = new javax.swing.JButton();
+        txtF = new javax.swing.JTextField();
+        txtX = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        tbl3x2f.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Função", null, null, null, null},
+                {"Restrição", null, null, null, null},
+                {"Restrição", null, null, null, null}
+            },
+            new String [] {
+                "", "X1", "X2", "X3", "B"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbl3x2f.setRowHeight(25);
+        tbl3x2f.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tbl3x2f);
+
+        btnCalcular1.setText("Calcular");
+        btnCalcular1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcular1ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel3.setText("Método Simplex");
+
+        jLabel7.setText("Obs: Favor pressionar o 'Enter' ao final do preenchimento da tabela e antes de clicar 'Calcular'");
+
+        javax.swing.GroupLayout pnl3X2FLayout = new javax.swing.GroupLayout(pnl3X2F);
+        pnl3X2F.setLayout(pnl3X2FLayout);
+        pnl3X2FLayout.setHorizontalGroup(
+            pnl3X2FLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl3X2FLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnl3X2FLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(btnCalcular1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(pnl3X2FLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnl3X2FLayout.setVerticalGroup(
+            pnl3X2FLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl3X2FLayout.createSequentialGroup()
+                .addContainerGap(87, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(btnCalcular1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(100, Short.MAX_VALUE))
+        );
+
+        tbl2x3f.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Função", null, null, null},
+                {"Restrição", null, null, null},
+                {"Restrição", null, null, null},
+                {"Restrição", null, null, null}
+            },
+            new String [] {
+                "", "X1", "X2", "B"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbl2x3f.setRowHeight(25);
+        tbl2x3f.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(tbl2x3f);
+
+        btnCalcular2.setText("Calcular");
+        btnCalcular2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcular2ActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel4.setText("Método Simplex");
+
+        jLabel8.setText("Obs: Favor pressionar o 'Enter' ao final do preenchimento da tabela e antes de clicar 'Calcular'");
+
+        javax.swing.GroupLayout pnl2X3FLayout = new javax.swing.GroupLayout(pnl2X3F);
+        pnl2X3F.setLayout(pnl2X3FLayout);
+        pnl2X3FLayout.setHorizontalGroup(
+            pnl2X3FLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl2X3FLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnl2X3FLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCalcular2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(pnl2X3FLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnl2X3FLayout.setVerticalGroup(
+            pnl2X3FLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl2X3FLayout.createSequentialGroup()
+                .addContainerGap(94, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(btnCalcular2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(93, Short.MAX_VALUE))
+        );
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel5.setText("Resultado");
+
+        txtResultado.setColumns(20);
+        txtResultado.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        txtResultado.setForeground(new java.awt.Color(0, 121, 29));
+        txtResultado.setRows(5);
+        txtResultado.setEnabled(false);
+        jScrollPane4.setViewportView(txtResultado);
+
+        javax.swing.GroupLayout pnlResultadoLayout = new javax.swing.GroupLayout(pnlResultado);
+        pnlResultado.setLayout(pnlResultadoLayout);
+        pnlResultadoLayout.setHorizontalGroup(
+            pnlResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlResultadoLayout.createSequentialGroup()
+                .addContainerGap(73, Short.MAX_VALUE)
+                .addGroup(pnlResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlResultadoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(74, Short.MAX_VALUE))
+        );
+        pnlResultadoLayout.setVerticalGroup(
+            pnlResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlResultadoLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jLabel5)
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.CardLayout());
+
+        jPanel1.setLayout(new java.awt.CardLayout());
+
+        btnInicio.setText("OK");
+        btnInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInicioActionPerformed(evt);
+            }
+        });
+
+        txtF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFActionPerformed(evt);
+            }
+        });
+
+        txtX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtXActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Digite a quantidade de X da função");
+
+        jLabel2.setText("Digite a quantidade de F da função");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel6.setText("Método Simplex");
+
+        javax.swing.GroupLayout pnlInicioLayout = new javax.swing.GroupLayout(pnlInicio);
+        pnlInicio.setLayout(pnlInicioLayout);
+        pnlInicioLayout.setHorizontalGroup(
+            pnlInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlInicioLayout.createSequentialGroup()
+                .addGroup(pnlInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlInicioLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInicioLayout.createSequentialGroup()
+                        .addContainerGap(168, Short.MAX_VALUE)
+                        .addGroup(pnlInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(81, 81, 81)
+                        .addGroup(pnlInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtX, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtF, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)))
+                .addContainerGap(168, Short.MAX_VALUE))
+            .addGroup(pnlInicioLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlInicioLayout.setVerticalGroup(
+            pnlInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInicioLayout.createSequentialGroup()
+                .addContainerGap(65, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(34, 34, 34)
+                .addGroup(pnlInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtX, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(pnlInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtF, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(190, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(pnlInicio, "card2");
+
+        getContentPane().add(jPanel1, "card2");
+
+        pack();
+    }// </editor-fold>                        
+
+    private void txtFActionPerformed(java.awt.event.ActionEvent evt) {                                     
+
+    }                                    
+
+    private void txtXActionPerformed(java.awt.event.ActionEvent evt) {                                     
+
+    }                                    
+
+    void calcular() {
+        while (true) {
+
+            double maiorn = 0;
+            int col = -1;
+            // descobrir a coluna do maior negativo e o maior negativo
+            for (int i = 0; i < coluna; i++) {
+
+                if (z[i] < maiorn) {
+                    maiorn = z[i];
+                    col = i;
+
+                }
+            }
+            if (maiorn == 0) {
+                break;
+            }
+
+            //Pegar os números da coluna encontrada e usa-los para dividir com o ultimo valor do vetor [coluna-1]
+            // mrpd = Menor resultado positivo da divisão
+            // pivo = numero pivo 
+            // novalpivo = nova linha pivo 
+            // linha = linha do pivo
+            double mrpd = 999999;
+            int linha = -1;
+            for (int i = 0; i < f; i++) {
+                double div = (restricao[i][coluna - 1] / restricao[i][col]);
+                if (div < mrpd) {
+                    if (div > 0) {
+                        mrpd = restricao[i][coluna - 1] / restricao[i][col];
+                        linha = i;
+                    }
+                }
+            }
+
+            double pivo = restricao[linha][col];
+
+            //definir a nova linha pivo 
+            novalpivo = new double[coluna];
+            for (int i = 0; i < coluna; i++) {
+                novalpivo[i] = restricao[linha][i] / pivo;
+            }
+            // novalpivo multiplicado por (-1*z[col]) o resultado somado a linha correspondente ao z[]
+
+            double e = z[col];
+            for (int i = 0; i < coluna; i++) {
+                z[i] = novalpivo[i] * (-1 * e) + z[i];
+
+            }
+
+            /* Correndo as restrições SE ela forem DIFERENTES da linha pivo, multiplicando pelo inverso do numero correspondente ao COL, somando com o seu
+	estado anterior e substituindo */
+            for (int i = 0; i < f; i++) {
+                e = restricao[i][col];
+                for (int j = 0; j < coluna; j++) {
+
+                    if (linha != i) {
+                        restricao[i][j] = novalpivo[j] * (-1 * e) + restricao[i][j];
+                    } else {
+                        restricao[i][j] = novalpivo[j];
+                    }
+                }
+            }
+        }
+    }
+
+    private void btnCalcular1ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+//Botão calcular que calcula o 3X 2F    
+        btnCalcular1.requestFocus();
+        System.out.println(tbl3x2f.getValueAt(0, 4).toString());
+        z[0] = 1;
+        z[1] = -1 * Double.parseDouble(tbl3x2f.getValueAt(0, 1).toString());
+        z[2] = -1 * Double.parseDouble(tbl3x2f.getValueAt(0, 2).toString());
+        z[3] = -1 * Double.parseDouble(tbl3x2f.getValueAt(0, 3).toString());
+        z[4] = 0;
+        z[5] = 0;
+        z[6] = Double.parseDouble(tbl3x2f.getValueAt(0, 4).toString());
+
+        //restrições
+        restricao[0][0] = 0;
+        restricao[0][1] = Double.parseDouble(tbl3x2f.getValueAt(1, 1).toString());
+        restricao[0][2] = Double.parseDouble(tbl3x2f.getValueAt(1, 2).toString());
+        restricao[0][3] = Double.parseDouble(tbl3x2f.getValueAt(1, 3).toString());
+        restricao[0][4] = 1;
+        restricao[0][5] = 0;
+        restricao[0][6] = Double.parseDouble(tbl3x2f.getValueAt(1, 4).toString());
+
+        restricao[1][0] = 0;
+        restricao[1][1] = Double.parseDouble(tbl3x2f.getValueAt(2, 1).toString());
+        restricao[1][2] = Double.parseDouble(tbl3x2f.getValueAt(2, 2).toString());
+        restricao[1][3] = Double.parseDouble(tbl3x2f.getValueAt(2, 3).toString());
+        restricao[1][4] = 0;
+        restricao[1][5] = 1;
+        restricao[1][6] = Double.parseDouble(tbl3x2f.getValueAt(2, 4).toString());
+
+        calcular();
+        pegarResultado(pnl3X2F);
+
+    }                                            
+
+    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {                                          
+
+        x = Integer.parseInt(txtX.getText());
+        f = Integer.parseInt(txtF.getText());
+
+        coluna = 2 + x + f;
+        z = new double[coluna];
+        restricao = new double[f][coluna];
+
+        if (x == 2) {
+            // abrir o pnl2x3f 
+            TrocarPainel(pnlInicio, pnl2X3F);
+        } else {
+            //abrir o pnl3x2f
+            TrocarPainel(pnlInicio, pnl3X2F);
+        }
+
+
+    }                                         
+
+    private void btnCalcular2ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+// calcular do 2x3f
+        btnCalcular2.requestFocus();
+        // função
+        z[0] = 1;
+        z[1] = -1 * Double.parseDouble(tbl2x3f.getValueAt(0, 1).toString());
+        z[2] = -1 * Double.parseDouble(tbl2x3f.getValueAt(0, 2).toString());
+        z[3] = 0;
+        z[4] = 0;
+        z[5] = 0;
+        z[6] = Double.parseDouble(tbl2x3f.getValueAt(0, 3).toString());
+
+        //restrições
+        restricao[0][0] = 0;
+        restricao[0][1] = Double.parseDouble(tbl2x3f.getValueAt(1, 1).toString());
+        restricao[0][2] = Double.parseDouble(tbl2x3f.getValueAt(1, 2).toString());
+        restricao[0][3] = 1;
+        restricao[0][4] = 0;
+        restricao[0][5] = 0;
+        restricao[0][6] = Double.parseDouble(tbl2x3f.getValueAt(1, 3).toString());
+
+        restricao[1][0] = 0;
+        restricao[1][1] = Double.parseDouble(tbl2x3f.getValueAt(2, 1).toString());
+        restricao[1][2] = Double.parseDouble(tbl2x3f.getValueAt(2, 2).toString());
+        restricao[1][3] = 0;
+        restricao[1][4] = 1;
+        restricao[1][5] = 0;
+        restricao[1][6] = Double.parseDouble(tbl2x3f.getValueAt(2, 3).toString());
+
+        restricao[2][0] = 0;
+        restricao[2][1] = Double.parseDouble(tbl2x3f.getValueAt(3, 1).toString());
+        restricao[2][2] = Double.parseDouble(tbl2x3f.getValueAt(3, 2).toString());
+        restricao[2][3] = 0;
+        restricao[2][4] = 0;
+        restricao[2][5] = 1;
+        restricao[2][6] = Double.parseDouble(tbl2x3f.getValueAt(3, 3).toString());
+
+        calcular();
+        pegarResultado(pnl2X3F);
+
+    }                                            
+
+    double[][] variavel;
+
+    void pegarResultado(JPanel pnlSaida) {
+        variavel = new double[coluna - 1][2];
+
+        int c0, c1;
+        for (int i = 0; i < coluna - 1; i++) { // colunas
+            c1 = 0;
+            c0 = 0;
+            int linha = -2;
+            if (z[i] == 1) {
+                c1++;
+                linha = -1;
+            } else if (z[i] == 0) {
+                c0++;
+            }
+            for (int j = 0; j < f; j++) {//linhas
+                if (restricao[j][i] == 1) {
+                    c1++;
+                    linha = j;
+                } else if (restricao[j][i] == 0) {
+                    c0++;
+                }
+            }
+            if ((c1 + c0) == (f + 1)) {
+
+                if (linha == -1) {
+
+                    variavel[i][0] = 1;
+                    variavel[i][1] = z[coluna - 1];
+
+                } else if (linha > -1) {
+
+                    variavel[i][0] = 1;
+                    variavel[i][1] = restricao[linha][coluna - 1];
+                } else {
+                    variavel[i][0] = 0;
+                    variavel[i][1] = 0;
+                }
+            }
+
+        }
+
+        String Resultado = "";
+        for (int i = 0; i < coluna - 1; i++) {
+
+            if (variavel[i][0] == 0) {
+                Resultado += ("Variavel não básica - ");
+            } else {
+                if (i == 0) {
+                    Resultado += ("Solução - ");
+                } else {
+
+                    Resultado += ("Variavel básica - ");
+                }
+            }
+            if (i == 0) {
+                Resultado += ("Z - ");
+            } else if (i <= x) {
+                Resultado += ("x" + i + " - ");
+            } else {
+                Resultado += ("f" + (i - x) + " - ");
+            }
+
+            Resultado += (variavel[i][1]);
+            Resultado += ("\n");
+        }
+
+        TrocarPainel(pnlSaida, pnlResultado);
+        txtResultado.setText(Resultado);
+    }
+
+    void TrocarPainel(JPanel pnlSaida, JPanel pnlEntrada) {
+
+        jPanel1.remove(pnlSaida);
+        jPanel1.add(pnlEntrada);
+        this.pack();
+        this.setSize(665, 512);
+
+    }
+
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(TelaSimplex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(TelaSimplex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(TelaSimplex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TelaSimplex.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new TelaSimplex().setVisible(true);
+
+            }
+        });
+    }
+    int x, f;
+    int coluna = 2;
+    double[] z;
+    double[] novalpivo;
+    double restricao[][];
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton btnCalcular1;
+    private javax.swing.JButton btnCalcular2;
+    private javax.swing.JButton btnInicio;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel pnl2X3F;
+    private javax.swing.JPanel pnl3X2F;
+    private javax.swing.JPanel pnlInicio;
+    private javax.swing.JPanel pnlResultado;
+    private javax.swing.JTable tbl2x3f;
+    private javax.swing.JTable tbl3x2f;
+    private javax.swing.JTextField txtF;
+    private javax.swing.JTextArea txtResultado;
+    private javax.swing.JTextField txtX;
+    // End of variables declaration                   
+}
